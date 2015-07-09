@@ -7,10 +7,9 @@ module.exports =
     go_executable_path: '/usr/local/bin/go'
 
   activate: ->
-    atom.workspaceView.command "go-playground:execute", => @execute()
+    atom.commands.add 'atom-workspace', 'go-playground:execute': ->
 
-  execute: ->
-    editor = atom.workspace.getActiveEditor()
+    editor = atom.workspace.getActiveTextEditor()
 
     # unsaved file returns undefined
     current_file_path = editor.getPath()
@@ -18,7 +17,7 @@ module.exports =
     unless current_file_path.match(/\.go$/)
       return console.log('The file extention is not matched.')
 
-    output_file_path = "#{atom.project.getPath()}/#{editor.getTitle()}.out"
+    output_file_path = "#{atom.project.getPaths()[0]}/#{editor.getTitle()}.out"
 
     # evaluate go
     command = atom.config.get('go-playground.go_executable_path')

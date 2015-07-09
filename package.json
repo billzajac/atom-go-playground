@@ -3,9 +3,9 @@
   "main": "./lib/go-playground",
   "version": "0.0.3",
   "description": "Go run active file",
-  "activationCommands": [
+  "activationCommands": {
     "atom-text-editor": ["go-playground:execute"]
-  ],
+  },
   "repository": "https://github.com/tachiba/atom-go-playground",
   "license": "MIT",
   "engines": {
