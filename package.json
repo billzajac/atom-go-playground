@@ -1,10 +1,10 @@
 {
   "name": "go-playground",
   "main": "./lib/go-playground",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Go run active file",
-  "activationEvents": [
-    "go-playground:execute"
+  "activationCommands": [
+    "atom-text-editor": ["go-playground:execute"]
   ],
   "repository": "https://github.com/tachiba/atom-go-playground",
   "license": "MIT",
