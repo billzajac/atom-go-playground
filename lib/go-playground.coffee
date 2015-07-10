@@ -3,8 +3,10 @@ existsSync = require('fs').existsSync
 writeFile = require('fs').writeFile
 
 module.exports =
-  configDefaults:
-    go_executable_path: '/usr/local/bin/go'
+  config:
+    go_executable_path:
+      type: 'string'
+      default: '/usr/local/bin/go'
 
   activate: ->
     atom.commands.add 'atom-workspace', 'go-playground:execute': ->
